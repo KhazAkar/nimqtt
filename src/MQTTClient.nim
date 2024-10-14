@@ -1,13 +1,17 @@
- {.deadCodeElim: on.}
-when defined(windows): 
-  const 
-    libpahomqtt* = "paho-mqtt3c.dll"
-elif defined(macosx): 
-  const 
-    libpahomqtt* = "libpaho-mqtt3c.so"
-else: 
-  const 
-    libpahomqtt* = "libpaho-mqtt3c.so"
+when not defined(ssl):
+  when defined(windows): 
+    const 
+      libpahomqtt* = "paho-mqtt3c.dll"
+  else: 
+    const 
+      libpahomqtt* = "libpaho-mqtt3c.so"
+else:
+  when defined(windows): 
+    const 
+      libpahomqtt* = "paho-mqtt3cs.dll"
+  else: 
+    const 
+      libpahomqtt* = "libpaho-mqtt3cs.so"
 #******************************************************************************
 #  Copyright (c) 2009, 2015 IBM Corp.
 # 
