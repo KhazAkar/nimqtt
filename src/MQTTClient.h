@@ -2,9 +2,9 @@
 #  dynlib libpahomqtt
 #  cdecl
 #  if defined(windows)
-#    define libpahomqtt "paho-mqtt3c.dll"
+#    define libpahomqtt "paho-mqtt3cs.dll"
 #  else
-#    define libpahomqtt "libpaho-mqtt3c.so"
+#    define libpahomqtt "libpaho-mqtt3cs.so"
 #  endif
 #endif
 /*******************************************************************************
@@ -245,7 +245,7 @@ typedef struct
 	int do_openssl_init;
 } MQTTClient_init_options;
 
-#define MQTTClient_init_options_initializer { {'M', 'Q', 'T', 'G'}, 0, 0 }
+#define MQTTClient_init_options_initializer { {'M', 'Q', 'T', 'S'}, 0, 0 }
 
 /**
  * Global init of mqtt library. Call once on program start to set global behaviour.
